@@ -26,7 +26,7 @@ if (new Date().getHours() >= TWEET_HOUR)
 	nextTweet.setTime(Date.now() + 24 * 60 * 60 * 1000);
 nextTweet.setHours(TWEET_HOUR, 0, 0, 0);
 
-console.log(`Processus lancée, prochain tweet à : ${nextTweet}`);
+console.log(`Processus lancé, prochain tweet à : ${nextTweet}`);
 
 setTimeout(async function () {
 	await tweet();
