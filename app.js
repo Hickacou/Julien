@@ -6,7 +6,7 @@ const TWEET_HOUR = 17;
 
 const T = new twit(config);
 const text = fs.readFileSync('./text.txt', { encoding: 'utf-8' }).split('\n');
-let { line } = JSON.parse(fs.readFileSync('./save.json', { encoding: 'utf-8' }))
+let { line } = JSON.parse(fs.readFileSync('./save.json', { encoding: 'utf-8' }));
 
 async function tweet() {
 	return new Promise(function (resolve, reject) {
@@ -30,5 +30,5 @@ console.log(`Processus lancé, prochain tweet à : ${nextTweet}`);
 
 setTimeout(async function () {
 	await tweet();
-	setInterval(tweet, 24 * 60 * 60 * 1000)
-}, nextTweet.getTime() - Date.now())
+	setInterval(tweet, 24 * 60 * 60 * 1000);
+}, nextTweet.getTime() - Date.now());
